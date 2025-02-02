@@ -1,0 +1,42 @@
+.page-button {
+  background-color: var(--primary-background);
+  color: white;
+  width: 5rem;
+  height: 4rem;
+  font-size: 24px;
+  border-radius: 0.5rem;
+  border: 0px;
+  transition: 0.6s opacity ease-out;
+}
+
+.eventday-container {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  width: inherit;
+  height: 100%;
+}
+
+.eventday-container:nth-child(1) {
+  grid-row: 1;
+}
+
+.eventday-container:nth-child(2) {
+  grid-row: 2;
+}
+
+.changepagebuttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-container {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100dvw;
+  height: 100%;
+}

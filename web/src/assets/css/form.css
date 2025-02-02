@@ -1,0 +1,52 @@
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid black;
+    border-radius: 4px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 1px 1px 1rem 1px black;
+}
+
+.form h1 {
+    position: absolute;
+    top: 1rem;
+    color: var(--secondary-background);
+}
+
+.floating-label {
+    position: relative;
+    top: -1.5rem;
+    left: -3rem;
+    font-size: 1rem;
+}
+
+.input {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid black;
+    width: 80%;
+    height: 2rem;
+}
+
+.input:focus {
+    outline: none;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 3px solid black;
+}
+
+.submit {
+    background-color: var(--primary-background);
+    color: white;
+    width: 6rem;
+    height: 2rem;
+    font-size: 24px;
+    border-radius: 0.5rem;
+    border: 0px;
+}

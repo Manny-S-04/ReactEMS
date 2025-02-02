@@ -1,0 +1,120 @@
+.card-container {
+  background-color: white;
+  filter: drop-shadow(0 0.25rem 0.75rem black);
+  border: 1px solid var(--tertiary-foreground);
+  border-radius: 0.5rem;
+  color: black;
+}
+
+.eventsList-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 90%;
+  width: 100%;
+}
+.eventsList-container .left {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  grid-column: 1;
+  height: 100%;
+  padding: 1rem;
+}
+.eventsList-container .right {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  grid-column: 2;
+  height: 100%;
+  padding: 1rem;
+}
+/*Mobile S*/
+@media (min-width: 320px) {
+  .eventsList-container {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+    gap: 2rem;
+    order: 2;
+    justify-content: center;
+    align-items: center;
+  }
+  .eventsList-container .left {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 100%;
+    padding: 1rem;
+    order: -1;
+    width: 75%;
+  }
+  .eventsList-container .right {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 100%;
+    padding: 1rem;
+    order: 1;
+    width: 75%;
+  }
+}
+
+.topbox {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+.event-headers {
+  border-bottom: 3px solid var(--primary-background);
+  padding-bottom: 1rem;
+}
+
+/* From Uiverse.io by alexroumi */
+.select-button {
+  border: unset;
+  height: 3rem;
+  width: 5.33rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-background);
+  color: white;
+  margin: 0.75rem;
+  z-index: 1;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+}
+
+.select-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 0.5rem;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+
+.select-button:hover {
+  color: #e8e8e8;
+}
+
+.select-button:hover::before {
+  width: 100%;
+}
+.select-button:active::before {
+  width: 100%;
+}
+
+.select-button:active {
+  transform: scale(0.9);
+}

@@ -2,17 +2,17 @@ package main
 
 import (
 	"BaApp/web"
-	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
 
+
 func main(){
     e := echo.New()
+    var database web.Database = web.RegisterDatabase()
+    _ = database.InitializeDatabase()
     web.RegisterHandlers(e)
-    e.GET("/api", func(c echo.Context) error {
-        return c.String(http.StatusOK, "Hello World")
-    })
+    web.RegisterPages(e, &database)
     e.Logger.Fatal(e.Start(":8080"))
 }
 

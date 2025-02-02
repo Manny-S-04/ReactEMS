@@ -1,4 +1,7 @@
 #!/bin/sh
 
-cd web && bun dev && cd .. && air
+(cd web && bun run dev) &
 
+air
+
+wait

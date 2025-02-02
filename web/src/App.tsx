@@ -1,26 +1,31 @@
-import { useState, useEffect } from "react";
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router";
+import SelectEvent from "./pages/SelectEvent";
+import EventDaysList from "./pages/EventDaysList";
+import CreateEvent from "./pages/CreateEvent";
 
+/*
+ *
+ * change css to suit full screen
+ * find a way to compile to single exe
+ * make docker
+ * push to azure services
+ *
+ */
 function App() {
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:8080/api");
-      const data = await response.text();
-      setData(data);
-    };
-
-    fetchData().catch((err) => console.log(err));
-  }, []);
-
   return (
-    <div className="App">
-            <h1>something</h1>
-      <h1>{data}</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SelectEvent />} />
+        <Route path="/event-day" element={<EventDaysList />} />
+        <Route
+          path="/create-event"
+          element={<CreateEvent eventData={null} />}
+        />
+        <Route path="*" element={<div>Not found</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
