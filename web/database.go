@@ -3,6 +3,7 @@ package web
 import (
 	"database/sql"
 	"fmt"
+	"os"
 	"time"
 
 	_ "github.com/glebarez/go-sqlite"
@@ -39,7 +40,8 @@ type Slot struct {
 }
 
 func RegisterDatabase() Database {
-	pathToDb := "/home/manny/WebProjects/ReactBAapp/web/database/events.db"
+	//pathToDb := "./web/database/events.db"
+    pathToDb := os.Getenv("PATH_TO_DB")
 	db, err := sql.Open("sqlite", fmt.Sprintf("file:%s?cache=shared", pathToDb))
 	if err != nil {
 		panic(err)
